@@ -8,7 +8,25 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <script type="text/javascript">
 
+      function login(){
+        var contG = sessionStorage.getItem("VariableContador");
+        if (contG == null || contG == 0){
+          window.location.href="login.html";
+          console.log(contG);
+          contG = 1;
+          sessionStorage.setItem("VariableContador", contG);
+        }
+      }
+      login();
+
+      function cerrarSesion(){
+        sessionStorage.setItem("VariableContador", 0);
+        login();
+      }
+
+    </script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -37,6 +55,8 @@
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
             <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
             <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+            <button class="botonCerrar" type="button" name="button" onclick="cerrarSesion();">Cerrar sesión</button>
+
         </div>
     </nav>
       <div class="container">
