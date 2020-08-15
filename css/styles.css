@@ -6,6 +6,14 @@
     font-weight: bold;
 }
 
+.botonCerrar{
+  background-color: #D61C6C;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
