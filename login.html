@@ -10,6 +10,8 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -91,7 +93,7 @@ input:hover {
 }
 
 /* Button style */
-button {
+#getin {
   border: none;
   border-radius: 2px;
   padding: 12px 18px;
@@ -105,25 +107,59 @@ button {
   
 }
 
-    .signin {
+   .signin {
       width: 100%;
       max-width: 330px;
       padding: 15px;
       margin: auto;
     }
 
-    h1 {
-
+   h1 {
       padding: 10px;
       font-weight: bolder;
       color:#D61C6C;
     }
+/* modo fiesta*/
+
+    .swich {
+      background: grey;
+      border-radius: 1000px;
+      border: none;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      outline: none;
+    }
+
+    span {
+
+width: 30px;
+height: 30px;
+line-height: 30px;
+display: block;
+background: none;
+}
 
 
-    
+.swich::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: #f1f1f1;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: .3s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+}
 
+.swich:active {
 
-
+  background: #EA5D9A;
+}
     
   </style>
 
@@ -159,13 +195,17 @@ button {
         </label>
       </div>
      
-      <button class="btn btn-lg btn-primary btn-block ripple"  type="submit" style="margin: 10px;"> <a href="" data-toggle="tooltip" <img src='https://media1.giphy.com/media/4CP58gxwbBy2Q/200.gif'> </a> Get in loser, we're going shopping</button>
+      <button id="getin"
+      class="btn btn-lg btn-primary btn-block ripple"  type="submit" style="margin: 10px;"> <a href="" data-toggle="tooltip" <img src='https://media1.giphy.com/media/4CP58gxwbBy2Q/200.gif'> </a> Get in loser, we're going shopping</button>
     <img src="" alt="">
     
        <p class="mt-5 mb-3 text-muted" >&copy; Valentina Priore - 2020</p>
     </form>
   </div>
-  
+  <button  class="swich" id="swich"> 
+    <span></span>
+    <span></span>
+  </button>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
