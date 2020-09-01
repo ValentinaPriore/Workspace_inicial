@@ -28,19 +28,41 @@
       padding-top: 40px;
       padding-bottom: 40px;
       background-color: #f5f5f5;
-margin: auto;
+      margin: auto;
+      transition: .3s ease all;
+        
     }
 
-    .form-signin {
+    *{
+      transition: .3s ease all;
+    }
 
-      margin-left: 12%;
-      margin-right: 12%;
+    .dark {
+        background-color: #333333 !important;
+     }
+
+   body.dark .p-5 {
+  border-radius: 50px !important;
+background: #333333 !important;
+box-shadow:  20px 20px 60px #2b2b2b !important;
+             
+
+ }
+
+ body.dark .form-control{
+
+  background-color: #333333 !important;
+ }
+
+    .form-signin {
+      margin: auto;
+      max-width: 250px;
     }
 
    .p-5 {
      width: 30%;
      min-width: 358px;
-     height: 95%;
+     height: 98%;
      margin: 5px;
     border-radius: 50px;
     padding-bottom: 0%;
@@ -48,48 +70,41 @@ background: linear-gradient(145deg, #fefefe, #d5d5d5);
 box-shadow:  22px 22px 45px #c9c9c9, 
              -22px -22px 45px #ffffff;
         margin: auto;
+        z-index: 2;
     
    }
-   .ripple {
-  background-position: center;
-  transition: background 0.8s;
-  background-color: #D61C6C;
-  border-color: #D61C6C;
-}
 
-
-.ripple:hover {
-  background: #EA5D9A radial-gradient(circle, transparent 1%, #B5D982 1%) center/15000%;
-  border-color: #D61C6C;
-}
-.ripple:active {
-  background-color: #9ACB56;
-  background-size: 100%;
-  transition: background 0s;
-  border-color: #D61C6C;
-}
 
 input {
 
   border-color: #9acb56;
-  color: #f5f5f5;
+  background-color: rgba(182, 182, 182, 0.1);
   border-radius: 0.1rem;
+}
 
+
+audio {
+
+
+display: none;
 
 }
 
-input:hover {
+.img {
 
-  border: 1px solid #B5D982; /* some kind of blue border */
+  position: absolute;
+  visibility: hidden;
+  z-index: 3;
+  overflow: hidden;
+  width: 400px;
+padding-left: 200px;
+}
 
-/* other CSS styles */
+button:hover .img {
+
+visibility: visible;
 
 
-
-/* make it glow! */
--webkit-box-shadow: 0px 0px 10px #B5D982;
-   -moz-box-shadow: 0px 0px 10px #B5D982;
-        box-shadow: 0px 0px 10px #B5D982; 
 }
 
 /* Button style */
@@ -98,6 +113,7 @@ input:hover {
   border-radius: 2px;
   padding: 12px 18px;
   font-size: 16px;
+  margin: 5px;
   text-transform: uppercase;
   cursor: pointer;
   color: white;
@@ -121,7 +137,7 @@ input:hover {
     }
 /* modo fiesta*/
 
-    .swich {
+    .cambio {
       background: grey;
       border-radius: 1000px;
       border: none;
@@ -129,6 +145,7 @@ input:hover {
       cursor: pointer;
       display: flex;
       outline: none;
+      margin: auto;
     }
 
     span {
@@ -141,14 +158,13 @@ background: none;
 }
 
 
-.swich::after {
+.cambio::after {
   content: "";
   display: block;
   width: 30px;
   height: 30px;
   position: absolute;
   background: #f1f1f1;
-  top: 0;
   left: 0;
   right: unset;
   border-radius: 100px;
@@ -156,56 +172,213 @@ background: none;
   box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
 }
 
-.swich:active {
+.cambio:active::after {
 
   background: #EA5D9A;
+  right: 0;
+  left: unset;
+  }
+
+
+
+body.dark .confetti-container {
+   z-index: 1; position:absolute; left: 0px; top: 0px; 
+  margin: 0 auto ;
+  width: 100%;
+  height: 100%;
+  display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 100px;
+		position: absolute;
+
 }
+body.dark .confetti {
+
+	height: 15px;
+	width: 10px;
+	animation: confetti 2.4s ease-in-out -2s infinite;
+	transform-origin: left top;
+  overflow: hidden;
+  margin: auto;
+}
+body.dark .confetti:nth-child(1) {
+	background-color: blue;
+	left: 10%;
+	animation-delay: 0;
+}
+body.dark .confetti:nth-child(2) {
+	background-color: pink;
+	left: 20%;
+	animation-delay: -1s;
+}
+.confetti:nth-child(3) {
+	background-color: orange;
+	left: 30%;
+	animation-delay: -5.52s;
+}
+body.dark .confetti:nth-child(4) {
+	background-color: blue;
+	left: 40%;
+	animation-delay: -3s;
+}
+body.dark .confetti:nth-child(5) {
+	background-color: pink;
+	left: 50%;
+	animation-delay: -2.25s;
+}
+body.dark .confetti:nth-child(6) {
+	background-color: orange;
+	left: 60%;
+	animation-delay: -6s;
+}
+body.dark .confetti:nth-child(7) {
+	background-color: blue;
+	left: 70%;
+	animation-delay: -1.57s;
+}
+body.dark .confetti:nth-child(8) {
+	background-color: blue;
+	left: 80%;
+	animation-delay: -0.54s;
+}
+body.dark .confetti:nth-child(9) {
+	background-color: blue;
+	left: 90%;
+	animation-delay: -4.9s;
+}
+body.dark .confetti:nth-child(10) {
+	background-color: blue;
+	left: 100%;
+	animation-delay: -5.1s;
+}
+body.dark .confetti:nth-child(11) {
+	background-color: orange;
+	left: 5%;
+	animation-delay: -4.23s;
+}
+body.dark .confetti:nth-child(12) {
+	background-color: blue;
+	left: 15%;
+	animation-delay: -3.65s;
+}
+body.dark .confetti:nth-child(13) {
+	background-color: pink;
+	left: 25%;
+	animation-delay: -0.58s;
+}
+body.dark .confetti:nth-child(14) {
+	background-color: orange;
+	left: 35%;
+	animation-delay: -4.57s;
+}
+body.dark .confetti:nth-child(15) {
+	background-color: blue;
+	left: 45%;
+	animation-delay: -3.53s;
+}
+body.dark .confetti:nth-child(16) {
+	background-color: pink;
+	left: 55%;
+	animation-delay: -1.52s;
+}
+body.dark .confetti:nth-child(17) {
+	background-color: orange;
+	left: 65%;
+	animation-delay: -2.57s;
+}
+body.dark .confetti:nth-child(18) {
+	background-color: blue;
+	left: 75%;
+	animation-delay: -6.3s;
+}
+body.dark .confetti:nth-child(19) {
+	background-color: pink;
+	left: 85%;
+	animation-delay: -3.58s;
+}
+body.dark .confetti:nth-child(20) {
+	background-color: orange;
+	left: 90%;
+	animation-delay: -2.1s;
+}
+@keyframes confetti {
+	0% {
+		transform: rotateZ(15deg) rotateY(0deg) translate(0, 0);
+	}
+	25% {
+		transform: rotateZ(5deg) rotateY(360deg) translate(-5vw, 20vh);
+	}
+	50% {
+		transform: rotateZ(15deg) rotateY(720deg) translate(10vw, 60vh);
+	}
+	75% {
+		transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw, 80vh);
+	}
+	100% {
+		transform: rotateZ(25deg) rotateY(1440deg) translate(10vw, 110vh);
+	}
+}
+  
     
   </style>
 
-<script>
-  function callme(){
-      var name = document.getElementById('inputEmail').value;
-      sessionStorage.setItem('userName', name);
-  }
-  
-  $('#panelPrecios [data-toggle="tooltip"]').tooltip({
-    animated: 'fade',
-    placement: 'bottom',
-    html: true
-});
 
-</script>
 
 </head>
 
+
 <body class="text-center">
 
+  <div class="confetti-container">
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+		<div class="confetti"></div>
+  </div>
+  <audio controls id="maluma" src="Maluma.mp3">
+  
+  </audio>
   <div class="container p-5">
     <form onsubmit="callme()" class="form-signin"  action="index.html">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Plan_Ceibal.png" alt="">
+
       <h1 class="h3 mb-3 font-weight-normal">Bienvenido/a de nuevo</h1>
       <label for="inputEmail" class="sr-only">Email</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Email" style="margin: 10px;" required autofocus>
       <label for="inputPassword" class="sr-only">Contraseña</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" style="margin: 10px;" required>
-      <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Recuerdame
         </label>
-      </div>
      
-      <button id="getin"
-      class="btn btn-lg btn-primary btn-block ripple"  type="submit" style="margin: 10px;"> <a href="" data-toggle="tooltip" <img src='https://media1.giphy.com/media/4CP58gxwbBy2Q/200.gif'> </a> Get in loser, we're going shopping</button>
-    <img src="" alt="">
-    
-       <p class="mt-5 mb-3 text-muted" >&copy; Valentina Priore - 2020</p>
+      <button id="getin" class="btn btn-lg btn-primary btn-block ripple" type="submit" style="margin: 10px;"> <img class="img" src="" alt=""> Get in loser, we're going shopping </button>
+
     </form>
+    <button onclick="x.paused?x.play():x.pause()" class="cambio" id="cambio"> 
+      <span></span>
+      <span></span>
+  
+    </button>
+    <label for="cambio">Modo fiesta</label>
+
   </div>
-  <button  class="swich" id="swich"> 
-    <span></span>
-    <span></span>
-  </button>
+
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
