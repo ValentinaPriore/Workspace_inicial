@@ -5,16 +5,36 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 });
 
-//Fiesta
-const themeSwitch = document.getElementById("theme-switch");
-const body = document.getElementById("body");
+function callme(){
+	var name = document.getElementById('inputEmail').value;
+	sessionStorage.setItem('userName', name);
+}
 
-themeSwitch.addEventListener("click", () => {
-	let currentBodyClass = body.className;
 
-	if (body.className === "light") {
-		body.className = "dark";
-	} else if (body.className === "dark") {
-		body.className = "light";
+
+//fiesta
+var x = document.getElementById("maluma"); 
+var y = 0;
+
+function playAudio() { 
+	if (y = 0) {
+		x.play(); 
 	}
+  
+} 
+
+function pauseAudio() {  
+  x.pause(); 
+} 
+
+
+
+const btnSwitch = document.querySelector('#cambio');
+
+btnSwitch.addEventListener('click', () => {
+document.body.classList.toggle('dark');
+btnSwitch.classList.toggle('active'); 
+
 });
+
+
