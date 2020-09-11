@@ -27,7 +27,7 @@ function pauseAudio() {
   x.pause(); 
 } 
 
-
+//negro
 
 const btnSwitch = document.querySelector('#cambio');
 
