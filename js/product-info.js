@@ -96,20 +96,45 @@ document.addEventListener("DOMContentLoaded", function (e) {
               "comentarios"
             );
 
+          // Estrellas
+
+           let cantEstrellas = comments[i].score;
+           let estrellas = "" 
+           
+           for (a = 0; a < cantEstrellas; a++){
+            
+            estrellas += `<span id='star1' class='fa fa-star checked'></span>`;
+
+           };
+
+           
             commentsDescriptionHTML.innerHTML +=
-              `<div style="width: 100%; margin: auto;" > <p> <b>` +
+              `<div style="width: 100%; margin: auto;" > <p > <b>` +
               comments[i].user +
               "</b>" + " " +
               comments[i].dateTime +
-              " - <span id='starID' class='fa fa-star'></span> <span class='fa fa-star'></span> <span class='fa fa-star'></span> <span class='fa fa-star'></span> <span class='fa fa-star'></span> " +
-              comments[i].score + 
+              " - " + estrellas +
               " <br> " +
               comments[i].description 
             +`</p> <hr> </div>
                         `;
-          }
-        }
+
+
+
+
+
+          };
+        };
       });
+
+
+
+
+        
+
+
+
+
     }
   });
 });
