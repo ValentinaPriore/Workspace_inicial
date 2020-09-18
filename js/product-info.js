@@ -15,14 +15,14 @@ function showImagesGallery(array) {
     else  activar = ""; 
     
     htmlContentToAppend += ` 
-    <div class="carousel-item`+ activar +`"> 
+    <div class="carousel-item `+ activar +`"> 
     <img class="d-block w-100" src="` + 
         imageSrc +
         `">
         </div>
         
-        `;
-  }
+        `
+  };
   document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
 };
 
