@@ -43,3 +43,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+
+window.onload = function() {
+    document.getElementById('welcome').innerText = "Hola, " + sessionStorage.getItem('userName');
+};
