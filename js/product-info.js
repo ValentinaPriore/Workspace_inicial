@@ -2,25 +2,31 @@ var category = {};
 
 //Las fotos del producto
 
+
 function showImagesGallery(array) {
   let htmlContentToAppend = "";
 
+  var activar 
   for (let i = 0; i < array.length; i++) {
-    let imageSrc = array[i];
+    let imageSrc = array[i];  
 
-    htmlContentToAppend +=
-      `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + 
-      imageSrc +
-      `" alt="">
-            </div>
+
+    if (i == 0) activar = "active";    
+    else  activar = ""; 
+    
+    htmlContentToAppend += ` 
+    <div class="carousel-item`+ activar +`"> 
+    <img class="d-block w-100" src="` + 
+        imageSrc +
+        `">
         </div>
+        
         `;
   }
   document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
-}
+};
+
+
 
 
 
@@ -29,8 +35,6 @@ function showImagesGallery(array) {
 
 function showRelatedProducts(array) { 
   let htmlContentToAppend = "";
-
-  
 
   for (let i = 0; i < array.length; i++) {
 
@@ -54,15 +58,16 @@ function showRelatedProducts(array) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 
+
 document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
     if (resultObj.status === "ok") {
-      product = resultObj.data;
+
+      product = resultObj.data; //info del JSON
+
 
       let categoryNameHTML = document.getElementById("categoryName");
-      let categoryDescriptionHTML = document.getElementById(
-        "categoryDescription"
-      );
+      let categoryDescriptionHTML = document.getElementById( "categoryDescription");
       let productCountHTML = document.getElementById("productCount");
       let productCriteriaHTML = document.getElementById("productCriteria");
 
@@ -73,8 +78,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
       showImagesGallery(product.images);
 
-
-      // Productos relacionados
+     // Productos relacionados
 
       getJSONData(PRODUCTS_URL).then(function (resultProd) {
         if (resultProd.status === "ok") {
@@ -106,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
             estrellas += `<span id='star1' class='fa fa-star checked'></span>`;
 
            };
-
            
             commentsDescriptionHTML.innerHTML +=
               `<div style="width: 100%; margin: auto;" > <p > <b>` +
