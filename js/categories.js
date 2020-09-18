@@ -6,6 +6,10 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
+window.onload = function() {
+    document.getElementById('welcome').innerText = "Hola, " + sessionStorage.getItem('userName');
+};
+
 function sortCategories(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
