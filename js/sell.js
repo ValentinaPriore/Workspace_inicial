@@ -10,6 +10,10 @@ let PERCENTAGE_SYMBOL = '%';
 let SUCCESS_MSG = "¡Se ha realizado la publicación con éxito! :)";
 let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
+window.onload = function() {
+    document.getElementById('welcome').innerText = "Hola, " + sessionStorage.getItem('userName');
+};
+
 //Función que se utiliza para actualizar los costos de publicación
 function updateTotalCosts(){
     let unitProductCostHTML = document.getElementById("productCostText");
