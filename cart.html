@@ -142,86 +142,120 @@
   
   <h3>Carrito de compras</h3>
 
-<div class="container">
-   <div class="card shopping-cart" id="shopping-cart" >
-    <div class="card-header bg-dark text-light">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      Carrito de compras
-      <div class="clearfix"></div>
-  </div>
-  <div class="card-body" >
- <div id="productos"></div>
-      
- 
+  <div class="container">
+    <div class="card shopping-cart" id="shopping-cart" >
+      <div class="card-header bg-dark text-light">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        Carrito de compras
+        <div class="clearfix"></div>
+      </div>
 
-  <!-- Envío -->
-  <br>
+      <div  class="card-body" >
 
-  <form>
+      <div id="productos"></div> 
 
-   <div class="form-group ">
+      <!-- Envío -->
 
-         <!-- Envío -->
+      <div class="form-group ">
 
-     <div style="padding-left: 20px;" >
+      <div style="padding-left: 20px;" >
+
        <p>Tipo de envío</p>
 
        <input type="radio" id="premium" name="envio" class="form-check-input" onchange="updateTotal()">Premium 2 a 5 días (15%) <br>
        <input type="radio"  id="express" name="envio" class="form-check-input" onchange="updateTotal()"> Express 5 a 8 días (7%) <br>
        <input type="radio" id="standar" checked  name="envio" class="form-check-input" onchange="updateTotal()">Standard 12 a 15 días (5%) <br>
       
-     
-     </div>
-<br>
+      </div>
+  
 
-         <!-- direccion -->
+      <!-- direccion -->
 
-<p>Dirección</p>
+      <p>Dirección</p>
+      <form id="form">
 
-      <div class="form-group" >
-       <label for="formGroupExampleInput">Calle</label>
-       <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Calle">
-     </div>
-     <div class="form-group">
-       <label for="formGroupExampleInput2">Número</label>
-       <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Número">
-     </div>
-     <div class="form-group">
-       <label for="formGroupExampleInput2">Esquina</label>
-       <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Esquina">
-     </div>
+          <div class="form-group" >
+          <label for="formGroupExampleInput">Calle</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" required placeholder="Calle">
+          </div>
 
-   </div>
-  </form>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Número</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" required placeholder="Número">
+          </div>
 
-            <!-- Costo final final -->
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Esquina</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" required placeholder="Esquina">
+          </div>
+        </div>
+      
 
-  <div>
-   <ul class="list-group" >
+        <!-- Costo final final -->
 
-    <li id="subtotal" class="list-group-item">
-    
-    </li>
+        <div>
+          <ul class="list-group" >
+            <li id="subtotal" class="list-group-item"></li>
+            <li id="envio" class="list-group-item"> </li>
+            <li id="costo" class="list-group-item"></li>
+          </ul>
+        </div>
 
-     <li id="envio" class="list-group-item">
-       
-     </li>
-     <li id="costo" class="list-group-item">
-       
-     </li>
-   </ul>
-  </div>
-<br>
-  <button class="btn btn-dark">Finalizar Compra</button>
-
-   </div>
- 
-  </div>
- 
-  </div>
+        <button  type="button" class="btn  btn-primary" data-toggle="modal" data-target="#exampleModal">Opciones de pago</button>
 
 
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              
+              <div class="modal-header">
+
+                <h5 class="modal-title" id="exampleModalLabel">Opciones de pago</h5>
+                  
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true"> </span>
+                </button>
+
+              </div>
+
+              <div class="modal-body">
+                <form action="">
+
+                  <div class="form-group">
+                    <label for="">Nombre en la tarjeta</label>
+                    <input type="text" name="nombre" class="form-control"> <br>
+
+                    <label for="">Número de tarjeta</label>
+                    <input type="text" name="numero" class="form-control"><br>
+              
+                    <label for="">Fecha de vencimiento </label>
+                    <input type="text" name="fecha" class="form-control"> <br>
+
+                    <label for=""> CVN </label>
+                    <input type="text" name="cvv" class="form-control"><br>
+                  </div>
+
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Guardar mis datos</label>
+                  </div>
+              </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Guardar</button>
+           </div>
+
+        </div>
+      </div>
     </div>
+
+      <input type="submit" id="finalizar" class="btn btn-dark" value="Finalizar compra"> 
+    </form>
+
+  </div> 
+
 </div>
  
   <div id="spinner-wrapper">
