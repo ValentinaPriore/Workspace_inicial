@@ -2,6 +2,13 @@ var input = document.getElementById('esto'); //esto es el input
 const log = document.getElementById('costo');
 const envio2 = document.getElementById('envio')
 const subtotal = document.getElementById('subtotal')
+let botonFinalizar = document.getElementById("finalizar")
+let nombre = document.getElementsByName("nombre")[0]
+let numero = document.getElementsByName("numero")[0] 
+let cvv = document.getElementsByName("cvv")[0]
+let formulario = document.getElementById("form")
+;
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -20,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function(e){
             input = document.getElementById('esto'); //esto es el input
  
             updateTotal();
+
+
+        
    
           };
     
@@ -31,8 +41,12 @@ window.onload = function() {
     document.getElementById('welcome').innerText = "Hola, " + sessionStorage.getItem('userName');
 };
 
+
+
 function mostrarArticulos(articulos){
     for (i = 0; i < 1 ; i++){
+
+        
     
     let preciounitario = articulos[i].unitCost;
 
@@ -45,7 +59,7 @@ function mostrarArticulos(articulos){
     </div>
     <div class="col-4 col-sm-4 text-sm-center col-md-4 text-md-right row">
         <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-            <h6><strong> Precio por unidad $ <div class="preciounitario">` + preciounitario + `</div> <span class="text-muted">`+ articulos[i].currency +`</span></strong></h6>
+            <h6><strong> Precio por unidad  $ <div class="preciounitario"> ` + preciounitario + `</div> <span class="text-muted">`+ articulos[i].currency +`</span></strong></h6>
         </div>
         <div class="col-4 col-sm-4 col-md-4">
             <div class="quantity">
@@ -54,25 +68,32 @@ function mostrarArticulos(articulos){
             </div>
         </div>
        
-    </div id="subtotalarriba">
-    </div>
+    <div  class="subtotal2" > hola5 </div>
+    <button>X</button>
+
 </div>
 <hr>   
-       `;
-              
-         
+       `;       
  }
+ 
 }
+
+
 
 
 function updateTotal(){
     preciosunitarios = document.getElementsByClassName("preciounitario");
+    subtotal2 = document.getElementsByClassName("subtotal2");
     shipping = envio();
     total=0;
     for(i=0;i<1;i++){
         preciounitario = parseInt(preciosunitarios[i].innerHTML) ;
+        subtotal2[i].innerHTML = input.value*preciounitario;
         total += input.value*preciounitario;
     }
+
+     
+
     envio2.innerHTML  = `<div class="col">Costo de envío</div> 
       <div  class="col">$`+  total * shipping +` </div>`
 
@@ -81,7 +102,8 @@ function updateTotal(){
 
       log.innerHTML =        
      `<div class="col">Costo de total</div> 
-   <div class="col"> $`+ total*(1 + shipping)+ `</div>`;
+        <div class="col"> $`+ total*(1 + shipping)+ `</div>`;
+
 }
 
 function envio() {
@@ -99,5 +121,21 @@ function envio() {
         shipping = 0.05;
     }
     return shipping;
-
  }
+
+ //validar modal
+
+ function validarNombre() {
+if ( nombre.value == 0 && nombre.value == 0 && cvv.value == 0 ){ 
+
+    alert("Completar las formas de pago")
+
+}
+
+ };
+
+ var validar = function() {
+     validarNombre();
+ }
+
+ botonFinalizar.addEventListener("click", validar)
