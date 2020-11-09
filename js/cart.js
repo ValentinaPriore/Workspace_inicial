@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", function(e){
             mostrarArticulos(objeto.articles);
 
             input = document.getElementById('esto'); //esto es el input
+
+         
  
             updateTotal();
 
@@ -38,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 window.onload = function() {
-    document.getElementById('welcome').innerText = "Hola, " + sessionStorage.getItem('userName');
+    document.getElementById('welcome').innerText = "Hola, " + localStorage.getItem('sesionactual');
 };
 
 
@@ -69,7 +71,6 @@ function mostrarArticulos(articulos){
         </div>
        
     <div  class="subtotal2" > hola5 </div>
-    <button>X</button>
 
 </div>
 <hr>   
@@ -95,14 +96,14 @@ function updateTotal(){
      
 
     envio2.innerHTML  = `<div class="col">Costo de envío</div> 
-      <div  class="col">$`+  total * shipping +` </div>`
+      <div  class="col">$`+ Math.round(total * shipping)  +` </div>`
 
         subtotal.innerHTML = `   <div class="col">Subtotal</div> 
-        <div  class="col"> $` + total + `</div>`
+        <div  class="col"> $` + Math.round(total)  + `</div>`
 
       log.innerHTML =        
      `<div class="col">Costo de total</div> 
-        <div class="col"> $`+ total*(1 + shipping)+ `</div>`;
+        <div class="col"> $`+ Math.round(total*(1 + shipping)) + `</div>`;
 
 }
 
@@ -126,11 +127,11 @@ function envio() {
  //validar modal
 
  function validarNombre() {
-if ( nombre.value == 0 && nombre.value == 0 && cvv.value == 0 ){ 
+if ( nombre.value == 0 || numero.value == 0 || cvv.value == 0 ){ 
 
     alert("Completar las formas de pago")
 
-}
+    }
 
  };
 
