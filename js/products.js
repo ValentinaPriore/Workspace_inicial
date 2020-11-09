@@ -8,7 +8,7 @@ var maxCount = undefined;
 var texto = undefined;
 
 window.onload = function() {
-    document.getElementById('welcome').innerText = "Hola, " + sessionStorage.getItem('userName');
+    document.getElementById('welcome').innerText = "Hola, " + localStoragee.getItem('sesionactual');
 };
 
 function sortCategories(criteria, array){
