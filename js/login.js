@@ -31,41 +31,47 @@ function callme(){
 		DataLogin.push(persona)
 		localStorage.setItem('DataLogin', JSON.stringify(DataLogin))
 
-		
-		}
+	
+	}
+
+	var bandera = false
 
 	for(i = 0; i < DataLogin.length; i++){
+
+
 		if(DataLogin[i].correo == name)	{
 
 			if(DataLogin[i].contraseña !== contraseña){
 				alert("Contraseña incorrecta")
 				contG = 0;
 				localStorage.setItem("VariableContador", contG)
-				
 			}
 
-			if(DataLogin[i].contraseña = contraseña){
+			if(DataLogin[i].contraseña == contraseña){
 				contG = 1;
 				localStorage.setItem("VariableContador", contG)
 			}
+			bandera = true
+			break;
 
 			
 
-		} else {
-			localStorage.setItem('DataLogin', JSON.stringify(DataLogin))
-			persona = {correo: name, 
-			contraseña: contraseña,
-			nombres: "", 
-			user: "", 
-			edad: "", 
-			telefono: ""}
-
-			DataLogin.push(persona)
-			localStorage.setItem('DataLogin', JSON.stringify(DataLogin))
-			break;
 		}
 	}
+	if (bandera == false){
+		localStorage.setItem('DataLogin', JSON.stringify(DataLogin))
+	persona = {correo: name, 
+	contraseña: contraseña,
+	nombres: "", 
+	user: "", 
+	edad: "", 
+	telefono: ""}
 
+	DataLogin.push(persona)
+	localStorage.setItem('DataLogin', JSON.stringify(DataLogin))
+
+
+	}
 	
 	
 		
