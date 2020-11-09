@@ -17,23 +17,23 @@
     <script type="text/javascript">
 
       function login(){
-        var contG = sessionStorage.getItem("VariableContador");
+        var contG = localStorage.getItem("VariableContador");
         if (contG == null || contG == 0){
           window.location.href="login.html";
           console.log(contG);
           contG = 1;
-          sessionStorage.setItem("VariableContador", contG);
+          localStorage.setItem("VariableContador", contG);
         }
       }
       login();
 
       function cerrarSesion(){
-        sessionStorage.setItem("VariableContador", 0);
+        localStorage.setItem("VariableContador", 0);
         login();
       }
 
       window.onload = function() {
-        document.getElementById('welcome').innerText = "Hola, " + sessionStorage.getItem('userName');
+        document.getElementById('welcome').innerText = "Hola, " + localStorage.getItem('sesionactual');
       };
 
     </script>
