@@ -11,7 +11,7 @@ let SUCCESS_MSG = "¡Se ha realizado la publicación con éxito! :)";
 let ERROR_MSG = "Ha habido un error :(, verifica qué pasó.";
 
 window.onload = function() {
-    document.getElementById('welcome').innerText = "Hola, " + sessionStorage.getItem('userName');
+    document.getElementById('welcome').innerText = "Hola, " + localStorage.getItem('sesionactual');
 };
 
 //Función que se utiliza para actualizar los costos de publicación
