@@ -42,13 +42,15 @@ function callme(){
 				contG = 0;
 				localStorage.setItem("VariableContador", contG)
 				
-			} 
-			else{
-				contG = 1
-				localStorage.setItem("VariableContador", contG)
-			
 			}
-				
+
+			if(DataLogin[i].contraseña = contraseña){
+				contG = 1;
+				localStorage.setItem("VariableContador", contG)
+			}
+
+			
+
 		} else {
 			localStorage.setItem('DataLogin', JSON.stringify(DataLogin))
 			persona = {correo: name, 
@@ -60,44 +62,15 @@ function callme(){
 
 			DataLogin.push(persona)
 			localStorage.setItem('DataLogin', JSON.stringify(DataLogin))
-			
+			break;
 		}
-			
 	}
 
-		
+	
 	
 		
-		
 }
 
-/* if(localStorage.getItem('DataLogin') == null){
-
-	DataLogin = [];
-	localStorage.setItem('DataLogin', JSON.stringify(DataLogin))
-}
-
-function login(){
-
-	var DataLogin = JSON.parse(localStorage.getItem('DataLogin'))
-	var bandera = false;
-	var passCheck = true;
-	for (var i = 0; i < DataLogin.length; i++) {
-		if(DataLogin[i].correo == name) {
-			bandera = true
-
-			if (DataLogin[i].password == contraseña){
-				var passCheck = false;
-			}
-			break;
-		} 
-	}
-}
-
-if(!bandera) {
-	persona = {correo: name, password: contraseña, nombres: "", apellidos: "", edad: "", telefono: ""}
-	DataLogin.push(persona)
-} */
 
 //fiesta
 var x = document.getElementById("maluma"); 
