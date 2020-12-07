@@ -11,9 +11,108 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-
+    <link rel="icon"  href="img/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+
+    
+
+    <style>
+        #productos {
+    margin: 30px 0 30px 0;
+   
+}
+
+#productos .card-notify-badge {
+        position: absolute;
+        left: -10px;
+        top: -20px;
+        background: #ff006d;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px; 
+        color: #000;
+        padding: 5px 10px;
+        font-size: 14px;
+
+    }
+
+#productos .card-notify-year {
+        position: absolute;
+        right: -10px;
+        top: -20px;
+        background: #ff4444;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;      
+        font-size: 14px;      
+        width: 50px;
+        height: 50px;    
+        padding: 15px 0 0 0;
+}
+
+
+#productos .card-detail-badge {      
+        background: #ff006d;
+        text-align: center;
+        border-radius: 30px 30px 30px 30px;
+        color: #000;
+        padding: 5px 10px;
+        font-size: 14px;        
+    }
+
+   
+
+
+
+#productos .card-image-overlay {
+        font-size: 20px;
+        
+    }
+
+
+#productos .card-image-overlay span {
+            display: inline-block;              
+        }
+
+.img-fluid{
+  -webkit-border-bottom-right-radius: 30px;
+-webkit-border-bottom-left-radius: 30px;
+-moz-border-radius-bottomright: 30px;
+-moz-border-radius-bottomleft: 30px;
+border-bottom-right-radius: 30px;
+border-bottom-left-radius: 30px;
+}
+#productos .ad-btn {
+        text-transform: uppercase;
+        width: 150px;
+        height: 40px;
+        border-radius: 80px;
+        font-size: 16px;
+        line-height: 35px;
+        text-align: center;
+        border: 3px solid #ff006d;
+        display: block;
+        text-decoration: none;
+        margin: 20px auto 1px auto;
+        color: #000;
+        overflow: hidden;        
+        position: relative;
+        background-color: #ff006d;
+    }
+
+
+
+#ads .ad-title h5 {
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+
+   .white{
+     color: white !important;
+   }
+
+    </style>
     <script type="text/javascript">
 
       function login(){
@@ -37,23 +136,33 @@
       };
 
     </script>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-
-        <div class="dropdown">
-          <button id="welcome" class="dropbtn"></button>
-          <div class="dropdown-content">
-            <a href="cart.html">Mi carrito</a>
-            <a href="my-profile.html">Mi perfil</a>
-            <a onclick="cerrarSesion();" href="#">Cerrar sesión</a>
-          </div>
-        </div>
-
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand"  href="index.html"><img style="height:60px;" src="img/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul  class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link categorias" style="font-weight: bold; color: #ff006d;" href="categories.html">Categorías </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-weight: bold; color: #ff006d;" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item dropdown ">
+            <a style="font-weight: bold; color:#ff006d;" class="nav-link dropdown-toggle" href="#" id="welcome" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </a>
+            <div class="dropdown-menu" style="border:none; " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"  href="sell.html">Vender</a>
+            <a class="dropdown-item" href="cart.html">Mi carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" onclick="cerrarSesion();" href="#">Cerrar sesión</a>
+            </div>
+          </li>
+         
+        </ul>
+        
       </div>
     </nav>
     <main role="main" class="pb-5">
@@ -102,9 +211,8 @@
                   </div>
                 </div>
             </div>
-            <div class="row">
-                <div id="productos">
-                </div>
+            <div class="row" id="productos">
+                
             </div>
         </div>
     </main>
