@@ -6,15 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <title>eMercado - Todo lo que busques está aquí</title>
+    <link rel="icon"  href="img/logo.png">
+
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="icon"  href="img/logo.png">
+
+
+    
+
     <style media="screen">
 
-     
+    
+
 
       .botonCerrar{
         background-color: #D61C6C;
@@ -32,6 +40,9 @@
   font-size: 16px;
   border: none;
 }
+
+
+
 
 
     </style>
@@ -63,102 +74,131 @@
     </script>
   <div id="header">
 
-   
-
-        
-
-
-    
 
     
     <main role="main">
       <section id="jumbotron">
 
-        <ul class="nav" style="position: top;">
-          <li class="nav-item" style="margin-left: 40%;">
-            <a class="nav-link" href="index.html" style="color: white;">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html" style="color: white;">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="products.html" style="color: white;">Productos</a>
-          </li>
-          <li class="nav-item">
-            <div class="dropdown">
-              <button id="welcome" class="dropbtn"></button>
-              <div class="dropdown-content">
-                <a  href="sell.html">Vender</a>
-                <a href="cart.html">Mi carrito</a>
-                <a href="my-profile.html">Mi perfil</a>
-                <a onclick="cerrarSesion();" href="#">Cerrar sesión</a>
-              </div>
-            </div>          
-          </li>
-        </ul>
-          <div class="m-5">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand"  href="#"><img style="height:60px;" src="img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link categorias" style="font-weight: bold; color: #ff006d;" href="categories.html">Categorías </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="font-weight: bold; color: #ff006d;" href="products.html">Productos</a>
+              </li>
+              <li class="nav-item dropdown ">
+                <a style="font-weight: bold; color:#ff006d;" class="nav-link dropdown-toggle" href="#" id="welcome" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </a>
+                <div class="dropdown-menu" style="border:none; " aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item"  href="sell.html">Vender</a>
+                <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                <a class="dropdown-item" onclick="cerrarSesion();" href="#">Cerrar sesión</a>
+                </div>
+              </li>
+             
+            </ul>
+            
+          </div>
+        </nav>
+
          
-          <h1 id="e-mercado">e-Mercado</h1>
-          <p id="subhead">tu ecommerce favorito</p>
+            <div class="container">
+              <div class="row">
+
+                <div style="width: 40%;" class="col-sm titulo-header">
+                  <p id="e-mercado">e-Mercado</p>
+            <p id="subhead">tu ecommerce favorito</p>
+                </div>
+                <div style="width: 50%; align-self: flex-start;" class="col-sm">
+                  <img class="ella" src="img/ella.png" alt="ilutración">
+              </div>
+             
+              </div>     
+          
         </div>
       </section>
-      <div class="album py-5 bg-light">
+      <div class="album py-5">
         <div class="container">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 c">
               <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                <img class="bd-placeholder-img card-img-top"  src="img/cat1.jpg">
-                <h3 class="m-3">Autos (122)</h3>
-                <div class="card-body">
+                <div class="top-sec"> <img class="bd-placeholder-img card-img-top img" style="padding: 10px;" src="img/auto.png"></div>
+                
+                <h4 class="titulo-card">Auto (122)</h4>
+              
                   <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
-                </div>
+            
               </a>
-            </div>
-            <div class="col-md-4">
+           </div>
+
+            <div class="col-md-4 c">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <div class="top-sec"> <img class="bd-placeholder-img card-img-top img" style="padding: 10px;" src="img/juguete.png"></div>
+                
+                <h4 class="titulo-card">Juguetes (354)</h4>
+              
+                  <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
+            
+              </a>
+           </div>
+
+
+            <div class="col-md-4 c">
                 <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat2.jpg">
-                  <h3 class="m-3">Juguetes (354)</h3>
-                  <div class="card-body">
-                    <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
-                  </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat3.jpg">
-                  <h3 class="m-3">Muebles (157)</h3>
-                  <div class="card-body">
+                  <div class="top-sec"> <img class="bd-placeholder-img card-img-top img" style="padding: 10px;" src="img/muebles.png"></div>
+                  
+                  <h4 class="titulo-card">Muebles (157)</h4>
+                
                     <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
-                  </div>
+              
                 </a>
             </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat4.jpg">
-                  <h3 class="m-3">Herramientas (452)</h3>
-                  <div class="card-body">
-                    <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
-                  </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat5.jpg">
-                  <h3 class="m-3">Computadoras (724)</h3>
-                  <div class="card-body">
-                    <p class="card-text">Todo en cuanto a computadoras, para uso de oficina y/o juegos.</p>
-                  </div>
-                </a>
-            </div>
-            <div class="col-md-4">
-                <a href="categories.html" class="card mb-4 shadow-sm custom-card">
-                  <img class="bd-placeholder-img card-img-top" src="img/cat6.jpg">
-                  <h3 class="m-3">Vestimenta (841)</h3>
-                  <div class="card-body">
-                    <p class="card-text">Gran variedad de ropa, nueva y de segunda mano.</p>
-                  </div>
-                </a>
-            </div>
+
+            <div class="col-md-4 c">
+              <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+                <div class="top-sec"> <img class="bd-placeholder-img card-img-top img" style="padding: 10px;" src="img/herramientas.png"></div>
+                
+                <h4 class="titulo-card">Herramientas (452)</h4>
+              
+                  <p class="card-text">Herramientas para cualquier tipo de trabajo.</p>
+            
+              </a>
+           </div>
+
+           <div class="col-md-4 c">
+            <a href="categories.html" class="card mb-4 shadow-sm custom-card">
+              <div class="top-sec"> <img class="bd-placeholder-img card-img-top img" style="padding: 10px;" src="img/computadoras.png"></div>
+              
+              <h4 class="titulo-card">Computadoras (724)</h4>
+            
+                <p class="card-text">Todo en cuanto a computadoras, para uso de oficina y/o juegos.</p>
+          
+            </a>
+           </div>
+
+           <div  class="col-md-4 c">
+            <a  href="categories.html" class="card mb-4 shadow-sm custom-card">
+              <div class="top-sec"> <img class="bd-placeholder-img card-img-top img" style="padding: 10px;" src="img/vestimenta.png"></div>
+              
+              <h4 class="titulo-card">Vestimenta(841)</h4>
+            
+                <p class="card-text">Gran variedad de ropa, nueva y de segunda mano.</p>
+          
+            </a>
+           </div>
+           
+           
+            
+
+   
           </div>
           <div class="row">
               <a type="button" class="btn btn-light btn-lg btn-block" href="categories.html">Ver todas</a>
@@ -175,6 +215,14 @@
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
     </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
