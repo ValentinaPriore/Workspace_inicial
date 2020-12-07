@@ -8,7 +8,7 @@ var maxCount = undefined;
 var texto = undefined;
 
 window.onload = function() {
-    document.getElementById('welcome').innerText = "Hola, " + localStoragee.getItem('sesionactual');
+    document.getElementById('welcome').innerText = "Hola, " + localStorage.getItem('sesionactual');
 };
 
 function sortCategories(criteria, array){
@@ -55,22 +55,30 @@ function showCategoriesList(){
           ){
 
             htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ category.name +`</h4>
-                            <small class="text-muted">` + category.soldCount + ` artículos</small>
-                        </div>
-                        <p class="mb-1">` + category.description + "<br>" + category.cost + category.currency +`</p>
-                    </div>
+            <div style="margin-bottom: 50px;" class="col-md-4">
+            <div class="card rounded ">
+                <div class="card-image">
+                    <span class="card-notify-badge white">` + category.soldCount + ` artículos</span>
+                    <img class="img-fluid" src="` + category.imgSrc + `" alt="`+ category.name +`" />
                 </div>
-            </a>
+                </br>
+                <div class="card-image-overlay m-auto">
+                    <span class="card-detail-badge white">$`+ category.cost + category.currency +`</span>
+                </div>
+                <div class="card-body text-center">
+                    <div class="ad-title m-auto">
+                        <h5>`+ category.name +`</h5>
+                        <p>` + category.description + `</p>
+                    </div>
+                    <a class="ad-btn white" href="product-info.html">Ver</a>
+                </div>
+            </div>
+        </div>
             `
         }
+
+
+/*        */
 
         document.getElementById("productos").innerHTML = htmlContentToAppend;
     }
