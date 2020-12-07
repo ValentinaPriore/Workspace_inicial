@@ -13,21 +13,60 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
+    <link rel="icon"  href="img/logo.png">
 
-    <style>
+    <script type="text/javascript">
 
- 
-    </style>
-     
+      function login(){
+        var contG = localStorage.getItem("VariableContador");
+        if (contG == null || contG == 0){
+          window.location.href="login.html";
+          console.log(contG);
+          contG = 1;
+          localStorage.setItem("VariableContador", contG);
+        }
+      }
+      login();
+
+      function cerrarSesion(){
+        localStorage.setItem("VariableContador", 0);
+        login();
+      }
+
+      window.onload = function() {
+        document.getElementById('welcome').innerText = "Hola, " + localStorage.getItem('sesionactual');
+      };
+
+    </script>
  </head>
   <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand"  href="index.html"><img style="height:60px;" src="img/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul  class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link categorias" style="font-weight: bold; color: #ff006d;" href="categories.html">Categorías </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-weight: bold; color: #ff006d;" href="products.html">Productos</a>
+          </li>
+          <li class="nav-item dropdown ">
+            <a style="font-weight: bold; color:#ff006d;" class="nav-link dropdown-toggle" href="#" id="welcome" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </a>
+            <div class="dropdown-menu" style="border:none; " aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"  href="sell.html">Vender</a>
+            <a class="dropdown-item" href="cart.html">Mi carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" onclick="cerrarSesion();" href="#">Cerrar sesión</a>
+            </div>
+          </li>
+         
+        </ul>
+        
       </div>
     </nav>
 
@@ -38,28 +77,7 @@
               <div class="col text-right">
               </div>
           </div>
-          <div class="row justify-content-end">
-            <div class="col-md-6"></div>
-              <div class="col-md-6 col-sm-12 mb-1 container">
-                <div class="row container p-0 m-0">
-                  <div class="col">
-                    <p class="font-weight-normal text-right my-2">Cant.</p>
-                  </div>
-                  <div class="col">
-                    <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-                  </div>
-                  <div class="col">
-                    <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-                  </div>
-                  <div class="col-3 p-0">
-                    <div class="btn-group" role="group">
-                      <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                      <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
+      
       </div>
     </div>
     <h3 id="categoryName"></h3>
