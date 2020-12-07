@@ -56,12 +56,12 @@ function mostrarArticulos(articulos){
     <div class="col-2 col-sm-2 col-md-2 text-center">
             <img class="img-responsive" src="`+ articulos[i].src +`" alt="prewiew" width="60">
     </div>
-    <div class="col-4 text-sm-center col-sm-4 text-md-left col-md-4">
+    <div class="col-3 text-sm-center col-sm-3 text-md-left ">
         <h6 class="product-name"><strong>`+ articulos[i].name +`</strong></h6>
     </div>
     <div class="col-4 col-sm-4 text-sm-center col-md-4 text-md-right row">
         <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-            <h6><strong> Precio por unidad  $ <div class="preciounitario"> ` + preciounitario + `</div> <span class="text-muted">`+ articulos[i].currency +`</span></strong></h6>
+            <h6><strong> Precio  <div class="preciounitario"> ` + preciounitario + `</div> <span class="text-muted">`+ articulos[i].currency +`</span></strong></h6>
         </div>
         <div class="col-4 col-sm-4 col-md-4">
             <div class="quantity">
@@ -70,7 +70,7 @@ function mostrarArticulos(articulos){
             </div>
         </div>
        
-    <div  class="subtotal2" > hola5 </div>
+    <div  style= "margin-left:auto;" class="subtotal2 col-sm-2" > hola5 </div>
 
 </div>
 <hr>   
@@ -89,7 +89,7 @@ function updateTotal(){
     total=0;
     for(i=0;i<1;i++){
         preciounitario = parseInt(preciosunitarios[i].innerHTML) ;
-        subtotal2[i].innerHTML = input.value*preciounitario;
+        subtotal2[i].innerHTML = " $" + input.value*preciounitario;
         total += input.value*preciounitario;
     }
 
