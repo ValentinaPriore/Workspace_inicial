@@ -95,12 +95,4 @@ function pauseAudio() {
 
 //negro
 
-const btnSwitch = document.querySelector('#cambio');
-
-btnSwitch.addEventListener('click', () => {
-document.body.classList.toggle('dark');
-btnSwitch.classList.toggle('active'); 
-
-});
-
 
